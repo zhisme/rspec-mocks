@@ -44,4 +44,4 @@ gem 'simplecov', '~> 0.8'
 
 gem "jruby-openssl", platforms: [:jruby]
 
-eval File.read('Gemfile-custom') if File.exist?('Gemfile-custom')
+eval_gemfile 'Gemfile-custom' if File.exist?('Gemfile-custom')
