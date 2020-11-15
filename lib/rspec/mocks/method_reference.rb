@@ -150,7 +150,7 @@ module RSpec
       end
 
       def method_defined?(object)
-        (class << object; self; end).method_defined?(@method_name)
+        object.singleton_class.method_defined?(@method_name)
       end
 
       def find_method(object)
