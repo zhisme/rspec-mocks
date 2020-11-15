@@ -16,7 +16,7 @@ bundler_args: "--binstubs --standalone --without documentation --path ../bundle"
 script: "script/run_build"
 rvm:
   - rbx-3
-  - jruby-9.1.7.0 # pin JRuby to this until travis/rvm can install later versions
+  - jruby-9.2
   - jruby-head
 env:
   - JRUBY_OPTS='--dev'
