@@ -19,6 +19,14 @@ function is_jruby {
   fi;
 }
 
+function rspec_rails_compatible {
+  if is_ruby_25_plus; then
+    return 0
+  else
+    return 1
+  fi
+}
+
 function additional_specs_available {
   type run_additional_specs > /dev/null 2>&1
   return $?

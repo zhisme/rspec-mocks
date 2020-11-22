@@ -186,6 +186,9 @@ function run_all_spec_suites {
   fold "rspec-core specs" run_spec_suite_for "rspec-core"
   fold "rspec-expectations specs" run_spec_suite_for "rspec-expectations"
   fold "rspec-mocks specs" run_spec_suite_for "rspec-mocks"
-  fold "rspec-rails specs" run_spec_suite_for "rspec-rails"
+  if rspec_rails_compatible; then
+    fold "rspec-rails specs" run_spec_suite_for "rspec-rails"
+  fi
+
   fold "rspec-support specs" run_spec_suite_for "rspec-support"
 }
