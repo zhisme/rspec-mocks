@@ -1,0 +1,1 @@
+bundler_args: "--binstubs --standalone --without documentation --path ../bundle"
