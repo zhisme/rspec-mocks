@@ -26,9 +26,12 @@ jobs:
           - 2.5
           - 2.4
           - 2.3
+          - jruby-9.1
+          - jruby-9.2
+          - jruby-head
           - ruby-head
       fail-fast: false
-    continue-on-error: ${{ matrix.ruby == 'jruby-9.2.13.0' || endsWith(matrix.ruby, 'head') }}
+    continue-on-error: ${{ endsWith(matrix.ruby, 'head') }}
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
