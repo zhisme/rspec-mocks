@@ -13,7 +13,9 @@ MAINTENANCE_BRANCH=`cat maintenance-branch`
 
 # Don't allow rubygems to pollute what's loaded. Also, things boot faster
 # without the extra load time of rubygems.
-export RUBYOPT="--disable=gem"
+if is_mri; then
+  export RUBYOPT="--disable=gem"
+fi;
 
 function clone_repo {
   if [ ! -d $1 ]; then # don't clone if the dir is already there
